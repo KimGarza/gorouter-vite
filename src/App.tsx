@@ -1,5 +1,6 @@
 import Home from './pages/Home';
-import Test from './pages/Test'
+import About from './pages/About'
+import Contact from './pages/Contact'
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 
 function App() {
@@ -8,7 +9,8 @@ function App() {
       {/* Routes replaces Switch */}
       <Routes>
         <Route path="/" element={<Home/>} />
-        <Route path="/test" element={<Test/>} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
     </Router>
   )
