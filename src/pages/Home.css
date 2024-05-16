@@ -1,43 +1,167 @@
+/* LAYOUT */
 #root {
-    max-width: 1280px;
-    margin: 0 auto;
+  margin: 0 auto;
+  padding: .5rem;
+  text-align: center;
+}
+
+  .container {
+    display: flex;
+  }
+  
+  .item {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* this helps the protocol text-box (absolute) stay WITHIN the bounds of item*/
+  }
+
+  .title {
+    text-align: left;
+  }
+
+  .protocol-input-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .protocol {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .protocol-textarea {
+    display: flex;
+    flex-grow: 1;
+    width: fit-content;
+  }
+
+  .protocol-title {
+    flex-grow: 1;
+    width: fit-content;
+  }
+
+  .protocol-submit {
+    display: flex;
+  }
+
+.protocol-connection {
+  display: flex;
+  flex-direction: column;
+}
+
+.protocol-connection-buttons {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.protocol-connection-single {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+
+
+  /* STYLING */
+  .item {
     padding: 2rem;
-    text-align: center;
+    height: 100vh; /* TRIGGERS vertical scroll cause */
+    border: 1px solid green;
+    border-radius: 15px;
   }
   
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
+  .item + .item {
+    margin-left: 2%;
+    height: 100vh;
+    width: 100%;
+  }  
+
+  .router {
+    width: 100%;
+    height: auto;
+    border: 1px solid greenyellow;
   }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
+
+  .title {
+    letter-spacing: 10px;
+    font-size: 32px;
   }
-  .logo.react:hover {
-    filter: drop-shadow(0 0 2em #61dafbaa);
+
+  .protocol {
+    margin: 10px;
+  }
+
+  .protocol-textarea {
+    width: 140px; /*min width too*/
+    height: 30px; /*min width too*/
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    resize: none;
   }
   
-  @keyframes logo-spin {
-    from {
-      transform: rotate(0deg);
+  .protocol-submit {
+    color: white;
+    height: 30px; /*min width too*/
+    margin-left: 5px;
+    align-items: center; 
+    justify-content: center; 
+    padding: 2px;
+  }
+
+  .protocol-submit:hover {
+    border: 1px solid rgb(143, 143, 143);
+    background-color: rgb(37, 37, 37);
+  }
+
+  .protocol-title {
+    width: fit-content;
+    letter-spacing: 1px;
+    font-size: 14x;
+    border-bottom: 1px solid green;
+    margin-bottom: 8px;
+  }
+
+  .protocol-connection {
+    margin-top: 12px;
+    gap: 5px;
+    font-size: smaller;
+  }
+
+  .protocol-connection-multiple {
+    color: white;
+    padding: 5px;
+    border-radius: 8px;
+    animation: glow 2s ease-in-out infinite;
+    justify-content: center;
+  }
+
+  @keyframes glow {
+    0%, 100% {
+      background-color: rgba(189, 0, 0, 0.5);
     }
-    to {
-      transform: rotate(360deg);
+    50% {
+      background-color: rgba(0, 0, 0, 0.5);
     }
   }
   
-  @media (prefers-reduced-motion: no-preference) {
-    a:nth-of-type(2) .logo {
-      animation: logo-spin infinite 20s linear;
-    }
+  .protocol-connection-buttons {
+    margin-top: 5px;
+    gap: 8px;
   }
-  
-  .card {
-    padding: 2em;
+
+  .protocol-connection-buttons > button {
+    border: 1px solid rgb(39, 39, 39);
   }
-  
-  .read-the-docs {
-    color: #888;
+
+  .protocol-connection-single {
+    gap: 8px;
   }
   
